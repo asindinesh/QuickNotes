@@ -1,16 +1,131 @@
-# React + Vite
+# QuickNotes – Full Stack Note-Taking Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+QuickNotes is a full-stack web application that allows users to create, view, and delete notes. It is built using React.js, Python Flask, and SQLite.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Create and save notes
+- View all saved notes
+- Delete notes with confirmation
+- Persistent storage using SQLite
+- Character validation
+- Responsive user interface
+- REST API integration
+- Error handling
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+**Frontend**
+- React.js
+- Vite
+- HTML
+- CSS
+- JavaScript
 
-## Expanding the ESLint configuration
+**Backend**
+- Python
+- Flask
+- Flask-CORS
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+**Database**
+- SQLite
+
+## Project Structure
+
+```text
+QuickNotes/
+├── backend/
+│   ├── app.py
+│   ├── database.py
+│   └── requirements.txt
+│
+├── frontend/
+│   ├── src/
+│   │   ├── App.jsx
+│   │   ├── App.css
+│   │   ├── index.css
+│   │   └── main.jsx
+│   ├── package.json
+│   └── vite.config.js
+│
+├── .gitignore
+└── README.md
+```
+
+## Installation and Setup
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/asindinesh/QuickNotes.git
+cd QuickNotes
+```
+
+### 2. Start the backend
+
+```bash
+cd backend
+python -m venv venv
+```
+
+Activate the virtual environment:
+
+Windows PowerShell:
+```powershell
+.\venv\Scripts\Activate.ps1
+```
+
+Install dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+Start Flask:
+
+```bash
+python app.py
+```
+
+Backend runs at `http://127.0.0.1:5000`.
+
+### 3. Start the frontend
+
+Open another terminal:
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+Open the local URL displayed by Vite, usually `http://localhost:5173`.
+
+## API Endpoints
+
+| Method | Endpoint | Description |
+|---|---|---|
+| GET | `/api/notes` | Retrieve all notes |
+| POST | `/api/notes` | Create a note |
+| DELETE | `/api/notes/<id>` | Delete a note |
+
+## Database
+
+SQLite stores notes persistently, including their content and creation timestamps.
+
+## Future Improvements
+
+- Edit existing notes
+- Search and filter notes
+- User authentication
+- Cloud deployment
+
+## Author
+
+**Asin Dinesh**
+
+GitHub: https://github.com/asindinesh
+
+## License
+
+This project is available for educational and learning purposes.
